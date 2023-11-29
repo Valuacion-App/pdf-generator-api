@@ -1,0 +1,27 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rerpote Tasacion Lab</title>
+</head>
+
+<body>
+    <div class="container">
+    <h1 class="text-center">Reporte</h1>
+    {{#each reports}}
+        <p class="SaltoDePagina">Name: {{name}}</p>
+        <img src="https://imagenes.elpais.com/resizer/of40U40Fyz0da-SAvW2iQ1mhr98=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/7YQXXLWRTJE7FG2OV24TOJ7V4M.webp " alt="Batman" width="500">
+        <div class="SaltoDePagina"></div>
+    {{/each}}
+    </div>
+</body>
+
+</html>
+
+<style>
+    div.SaltoDePagina {
+        page-break-after: always;
+    }
+</style>
