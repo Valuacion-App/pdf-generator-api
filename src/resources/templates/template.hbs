@@ -4,23 +4,59 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <div class="titlestyle">
     <title>Rerpote Tasacion Lab</title>
+    </div>
 </head>
 
 <body>
     <div class="container">
+    <div class="titlestyle">
     <h1 class="text-center">Reporte</h1>
+    </div>
+    <hr>
     {{#each reports}}
-        <p class="SaltoDePagina">Name: {{name}}</p>
-        <img src="https://imagenes.elpais.com/resizer/of40U40Fyz0da-SAvW2iQ1mhr98=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/7YQXXLWRTJE7FG2OV24TOJ7V4M.webp " alt="Batman" width="500">
-        <div class="SaltoDePagina"></div>
+    <div class="row">
+        <div class="col-lg-2">
+            <p class="SaltoDePagina" style="font-family: Arial">Codigo: {{Codigo}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Detalle: {{Detalle}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Descripcion: {{Descripcion}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Fecha: {{Fecha}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Ubicacion: {{Ubication}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Articulo: {{Article}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Vre: {{Vre}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Vr: {{Vr}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">K1a: {{K1a}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">K2: {{K2}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Ant: {{Ant}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Vexp: {{Vexp}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Va: {{Va}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Viñeta: {{Viñeta}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Codigo de Tasacion: {{CodigoTasacion}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Estado del articulo: {{EstadoDelArticulo}}</p>
+            <p class="SaltoDePagina" style="font-family: Arial">Sub Grupo: {{SubGroup}}</p>
+        </div>
+        <div class="images col-lg-4">
+            <img src={{Fotografia.url}} alt="Batman" width="250" height="200">
+            <img src={{FotografiaII.url}} alt="Batman" width="250" height="200">
+        </div>
+    </div>
+    <div class="SaltoDePagina"></div>
     {{/each}}
     </div>
+
 </body>
 
 </html>
 
 <style>
+    div.titlestyle {
+        background-color: rgb(43, 52, 148);
+    }
+    div.images {
+        display: flex;
+        justify-content: space-between;
+    }
     div.SaltoDePagina {
         page-break-after: always;
     }

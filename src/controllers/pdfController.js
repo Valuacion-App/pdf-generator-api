@@ -1,8 +1,18 @@
 const createPDF = require('../utils/pdfs/generatePDF')
 const renderTemplate = require('../utils/pdfs/renderTemplate')
+let reportsList = []
+fetch('http://localhost:3000/api/v1/importData')
+  .then(data => {
+    return data.json()
+  })
+  .then(item => {
+    reportsList = item
+  })
 
 const generatePDFController = async (req, res) => {
-  const reportes = { reports: [{ name: 'articulo1' }, { name: 'articulo2' }] }
+  console.log(reportsList)
+  const reportes = { reports: reportsList }
+
   const HTML = renderTemplate('template', reportes)
   const pdfBuffer = await createPDF({ templateHTML: HTML })
 

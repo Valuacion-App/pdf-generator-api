@@ -15,10 +15,10 @@ const createPDF = async ({ templateHTML }) => {
       format: 'A4',
       printBackground: true,
       margin: {
-        top: '2cm',
-        right: '3cm',
-        bottom: '2cm',
-        left: '3cm'
+        top: '0.5cm',
+        right: '1cm',
+        bottom: '1.5cm',
+        left: '1cm'
       }
     })
     await browser.close()
