@@ -5,7 +5,7 @@ const ROUTE_URL = '/api/v1'
 
 // Routes
 const welcomeRoute = require('./src/routes/welcome')
-const pdfRoute = require('./src/routes/pdf')
+const generatePDFRoute = require('./src/routes/pdf')
 const importData = require('./src/routes/importData')
 
 const app = express()
@@ -15,7 +15,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use(ROUTE_URL, welcomeRoute)
-app.use(ROUTE_URL, pdfRoute)
+app.use(ROUTE_URL + '/generate-pdf', generatePDFRoute)
 app.use(ROUTE_URL, importData)
 
 app.listen(PORT, (req, res) => {

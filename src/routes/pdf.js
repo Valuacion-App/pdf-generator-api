@@ -1,8 +1,7 @@
 const { Router } = require('express')
+const generatePDFController = require('../controllers/pdfController')
 const router = Router()
 
-router.get('/pdf', (req, res) => {
-  res.json({ message: 'Welcome to PDF Generator' })
-})
+router.get('/', generatePDFController)
 
 module.exports = router

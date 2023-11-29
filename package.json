@@ -14,7 +14,9 @@
     "cors": "2.8.5",
     "csv-parser": "^3.0.0",
     "dotenv": "16.3.1",
-    "express": "4.18.2"
+    "express": "4.18.2",
+    "handlebars": "^4.7.8",
+    "puppeteer-html-pdf": "^3.0.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.1",
