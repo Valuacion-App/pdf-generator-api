@@ -5,7 +5,6 @@ const generatePDFController = async (req, res) => {
   const reportes = { reports: [{ name: 'articulo1' }, { name: 'articulo2' }] }
   const HTML = renderTemplate('template', reportes)
   const pdfBuffer = await createPDF({ templateHTML: HTML })
-  console.log(pdfBuffer)
 
   // Configurar los encabezados de la respuesta
   res.setHeader('Content-Type', 'application/pdf')
