@@ -1,9 +1,7 @@
-const { Router } = require("express");
-const { importDataFromCsv } = require("../utils/importDataFromCsv");
-const router = Router();
+const { Router } = require('express')
+const { importDataFromCsv } = require('../utils/importDataFromCsv')
+const router = Router()
 
-router.get("/importData", (req, res) => {
-  importDataFromCsv(req, res);
-});
+router.get('/importData', importDataFromCsv)
 
-module.exports = router;
+module.exports = router

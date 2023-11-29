@@ -1,36 +1,36 @@
-const csv = require("csv-parser");
-const fs = require("fs");
-const results = [];
-let imageI;
-let imageII;
-const prefix = "https://adalo-uploads.imgix.net/";
+const csv = require('csv-parser')
+const fs = require('fs')
+const results = []
+let imageI
+let imageII
+const prefix = 'https://adalo-uploads.imgix.net/'
 
 const addPrefixToImages = (data) => {
   if (data.Fotografia) {
-    imageI = JSON.parse(data.Fotografia.replace(/'/g, '"'));
-    imageI.url = prefix + imageI.url;
+    imageI = JSON.parse(data.Fotografia.replace(/'/g, '"'))
+    imageI.url = prefix + imageI.url
 
-    data.Fotografia = imageI;
+    data.Fotografia = imageI
   }
   if (data.FotografiaII) {
-    imageII = JSON.parse(data.FotografiaII.replace(/'/g, '"'));
-    imageII.url = prefix + imageII.url;
-    data.FotografiaII = imageII;
+    imageII = JSON.parse(data.FotografiaII.replace(/'/g, '"'))
+    imageII.url = prefix + imageII.url
+    data.FotografiaII = imageII
   }
-  return data;
-};
+  return data
+}
 
 const importDataFromCsv = async (req, res) => {
   await fs
-    .createReadStream("TXdataAnt.csv")
+    .createReadStream('TXdataAnt.csv')
     .pipe(csv())
-    .on("data", (data) => {
-      let newData = addPrefixToImages(data);
-      results.push(newData);
+    .on('data', (data) => {
+      const newData = addPrefixToImages(data)
+      results.push(newData)
     })
-    .on("end", () => {
-      res.json(results);
-    });
-};
+    .on('end', () => {
+      res.json(results)
+    })
+}
 
-module.exports = { importDataFromCsv };
+module.exports = { importDataFromCsv }
