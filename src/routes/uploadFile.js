@@ -8,7 +8,6 @@ const storage = multer.diskStorage({
     callback(null, "src/files");
   },
   filename: function (req, file, callback) {
-    console.log(file.originalname);
     const filename = file.originalname;
     callback(null, filename);
   },
@@ -22,9 +21,6 @@ const upload = multer({
 });
 
 router.post("/uploadFile", upload.any(), function (req, res) {
-  console.log("req.body : ", req.body);
-  console.log("req.file : ", req.files);
-
   res.json({ message: "upload PDF File" });
 });
 
