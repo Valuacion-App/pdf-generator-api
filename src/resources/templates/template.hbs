@@ -1,22 +1,160 @@
 <html lang="es">
 
+{{!--     <!DOCTYPE html>
+<html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+
+</body>
+</html> --}}
+
+ <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <div class="titlestyle">
     <title>Rerpote Tasacion Lab</title>
     </div>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  {{!-- background: #f1f1f1; --}}
+}
+
+/* Header/Blog Title */
+.header {
+  {{!-- padding: 30px; --}}
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+</style>
 </head>
 
 <body>
     <div class="container">
-    <div class="titlestyle">
+   {{!--  <div class="titlestyle">
     <h1 class="text-center">Reporte</h1>
     </div>
-    <hr>
+    <hr> --}}
     {{#each reports}}
+    <div class="header">
+    <h2>Código: {{Codigo}}</h2>
+    </div>
     <div class="row">
+    <div class="leftcolumn">
+        <div class="card">
+        <h2>Detalle: {{Detalle}}</h2>
+        <h5>Fecha: {{Fecha}}</h5>
+        <div class="fakeimg" style="height:200;">
+            <div class="row">
+                <img src={{Fotografia.url}} alt="Batman" width="200" height="160">
+                
+                <img src={{FotografiaII.url}} alt="Batman" width="200" height="160">
+            </div>
+        </div>
+        
+        <p>Descripcion: {{Descripcion}}.</p>
+        {{!-- <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> --}}
+        </div>
+        <div class="card">
+        <p class="SaltoDePagina" style="font-family: Arial">Ubicacion: {{Ubication}}</p>
+        <p class="SaltoDePagina" style="font-family: Arial">Articulo: {{Article}}</p>
+        <p class="SaltoDePagina" style="font-family: Arial">Codigo de Tasacion: {{CodigoTasacion}}</p>
+        <p class="SaltoDePagina" style="font-family: Arial">Estado del articulo: {{EstadoDelArticulo}}</p>
+        <p class="SaltoDePagina" style="font-family: Arial">Sub Grupo: {{SubGroup}}</p>
+        {{!-- <h2>TITLE HEADING</h2>
+        <h5>Title description, Sep 2, 2017</h5>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p>Some text..</p>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p> --}}
+        </div>
+    </div>
+    <div class="rightcolumn">
+        <div class="card">
+        <h2>Datos del cálculo</h2>
+        <p class="SaltoDePagina" style="font-family: Arial">Vre: {{Vre}}</p>
+        <p class="SaltoDePagina" style="font-family: Arial">Vr: {{Vr}}</p>
+        <p class="SaltoDePagina" style="font-family: Arial">K1a: {{K1a}}</p>
+        <p class="SaltoDePagina" style="font-family: Arial">K2: {{K2}}</p>
+        <p class="SaltoDePagina" style="font-family: Arial">Ant: {{Ant}}</p>
+        <p class="SaltoDePagina" style="font-family: Arial">Vexp: {{Vexp}}</p>
+        <p class="SaltoDePagina" style="font-family: Arial">Va: {{Va}}</p>
+        <p class="SaltoDePagina" style="font-family: Arial">Viñeta: {{Viñeta}}</p>
+        {{!-- <div class="fakeimg" style="height:100px;">Image</div>
+        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+        </div>
+        <div class="card">
+        <h3>Popular Post</h3>
+        <div class="fakeimg">Image</div><br>
+        <div class="fakeimg">Image</div><br>
+        <div class="fakeimg">Image</div>
+        </div>
+        <div class="card">
+        <h3>Follow Me</h3>
+        <p>Some text..</p> --}}
+        </div>
+    </div>
+    </div>
+
+    <div class="footer">
+    <h2>Datos para firmar</h2>
+    </div>
+    {{!-- <div class="row">
         <div class="col-lg-2">
             <p class="SaltoDePagina" style="font-family: Arial">Codigo: {{Codigo}}</p>
             <p class="SaltoDePagina" style="font-family: Arial">Detalle: {{Detalle}}</p>
@@ -40,7 +178,7 @@
             <img src={{Fotografia.url}} alt="Batman" width="250" height="200">
             <img src={{FotografiaII.url}} alt="Batman" width="250" height="200">
         </div>
-    </div>
+    </div> --}}
     <div class="SaltoDePagina"></div>
     {{/each}}
     </div>
@@ -51,7 +189,8 @@
 
 <style>
     div.titlestyle {
-        background-color: rgb(43, 52, 148);
+        display: flex;
+        justify-content: center;
     }
     div.images {
         display: flex;
