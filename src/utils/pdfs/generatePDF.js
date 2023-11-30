@@ -19,7 +19,9 @@ const createPDF = async ({ templateHTML }) => {
         right: '3cm',
         bottom: '2cm',
         left: '3cm'
-      }
+      },
+      optimizeForSpeed: true, // Puedes ajustar este valor
+      preferCSSPageSize: true
     })
     await browser.close()
     return pdf
