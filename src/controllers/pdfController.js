@@ -10,7 +10,6 @@ fetch('http://localhost:3000/api/v1/importData')
   })
 
 const generatePDFController = async (req, res) => {
-  console.log(reportsList)
   const reportes = { reports: reportsList }
 
   const HTML = renderTemplate('template', reportes)

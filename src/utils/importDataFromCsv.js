@@ -26,6 +26,7 @@ const importDataFromCsv = async (req, res) => {
     .pipe(csv())
     .on('data', (data) => {
       const newData = addPrefixToImages(data)
+      newData.Fecha = new Date(newData.Fecha).toISOString().split('T')[0]
       results.push(newData)
     })
     .on('end', () => {
