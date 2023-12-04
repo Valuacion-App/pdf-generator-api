@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer')
 const createPDF = async ({ templateHTML }) => {
   const browser = await puppeteer.launch({
     headless: 'new',
-    args: ['--proxy-server=http://your-proxy-url:port', '--no-sandbox', '--disable-setuid-sandbox']
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
   })
 
   try {
@@ -14,7 +14,6 @@ const createPDF = async ({ templateHTML }) => {
     const pdf = await page.pdf({
       format: 'A4',
       printBackground: true,
-      timeout: 0,
       margin: {
         top: '0.5cm',
         bottom: '1.5cm'
