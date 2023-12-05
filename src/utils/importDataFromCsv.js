@@ -22,7 +22,7 @@ const addPrefixToImages = (data) => {
 
 const importDataFromCsv = async (req, res) => {
   await fs
-    .createReadStream('TXdataAnt.csv')
+    .createReadStream('./src/files/TXdataAnt.csv')
     .pipe(csv())
     .on('data', (data) => {
       const newData = addPrefixToImages(data)
