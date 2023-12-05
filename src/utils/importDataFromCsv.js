@@ -26,8 +26,12 @@ const importDataFromCsv = async (req, res) => {
     .pipe(csv())
     .on('data', (data) => {
       const newData = addPrefixToImages(data)
-      newData.Fecha = new Date(newData.Fecha).toISOString().split('T')[0]
+      // newData.Fecha = new Date(newData.Fecha).toISOString().split('T')[0]
+      console.log(newData)
+      newData.Fecha = newData.Fecha.split(' ')[0]
+      newData.EstadoDelArticulo = newData.Article === 'EQUIPO DE COMPUTACIÓN' ? newData.EstadoDelArticulo.split(' ')[0] : newData.EstadoDelArticulo
       results.push(newData)
+      newData.IsCPU = newData.Article === 'EQUIPO DE COMPUTACIÓN'
     })
     .on('end', () => {
       res.json(results)

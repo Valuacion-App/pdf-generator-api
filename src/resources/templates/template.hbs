@@ -24,7 +24,7 @@
     <div>
     {{#each reports}}
     <div class="cardHeader">
-        <h2 class="text-center">Reporte</h2>
+        <h2 class="text-center">Ficha Técnica</h2>
         <p class="textHeader"><b>Solicitante:</b> JUZGADO PUBLICO CIVIL - COMERCIAL NRO 1 COCHABAMBA</p>
         <p class="textHeader"><b>Propietario:</b> LAB SA</p>
         <p class="textHeader"><b> Ciudad: </b>COCHABAMBA</p>
@@ -36,11 +36,11 @@
     <div class="row">
         <div class="leftcolumn">
             <div class="card">
-            <p class="label" style="font-family: Arial"> <b>Código: </b>
-                <span class="data" style="font-family: Arial"><i>{{Codigo}}</i></span>
-            </p>
             <p class="label" style="font-family: Arial"><b>Código de Tasación: </b>
                 <span class="data" style="font-family: Arial"><i>{{CodigoTasacion}}</i></span>
+            </p>
+            <p class="label" style="font-family: Arial"> <b>Código: </b>
+                <span class="data" style="font-family: Arial"><i>{{Codigo}}</i></span>
             </p>
             <p class="label" style="font-family: Arial"><b>Fecha: </b>
                 <span class="data" style="font-family: Arial">{{Fecha}}</span>
@@ -64,32 +64,94 @@
                 <span class="data" style="font-family: Arial">{{SubGroup}}</span>
             </p>
             <p class="label" style="font-family: Arial"><b>Descripción: </b>
-                <span class="data" style="font-family: Arial">{{Descripcion}}.</span>
+                <span class="data description" style="font-family: Arial">{{Descripcion}}</span>
             </p>
             <hr class="new5">
             <h3>Datos del cálculo</h3>
-            <p class="label" style="font-family: Arial"><b>Vre: </b>
-                <span class="data" style="font-family: Arial">{{Vre}}</span>
-            </p>
-            <p class="label" style="font-family: Arial"><b>Vr: </b>
-                <span class="data" style="font-family: Arial">{{Vr}}</span>
-            </p>
-            <p class="label" style="font-family: Arial"><b>K1a: </b>
-                <span class="data" style="font-family: Arial">{{K1a}}</span>
-            </p>
-            <p class="label" style="font-family: Arial"><b>K2: </b>
-                <span class="data" style="font-family: Arial">{{K2}}</span>
-            </p>
-            <p class="label" style="font-family: Arial"><b>Ant: </b>
-                <span class="data" style="font-family: Arial">{{Ant}}</span>
-            </p>
-            <p class="label" style="font-family: Arial"><b>Vexp: </b>
-                <span class="data" style="font-family: Arial">{{Vexp}}</span>
-            </p>
-            <p class="label" style="font-family: Arial"><b>Va: </b>
-                <span class="data" style="font-family: Arial">{{Va}}</span>
-            </p>
-            <hr class="new5">
+            {{#if IsCPU}}
+            <div class="calculusData">
+                <p class="label" style="font-family: Arial"><b>Vre: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+                <p class="label" style="font-family: Arial"><b>Vr: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+                <p class="label" style="font-family: Arial"><b>K1a: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+                <p class="label" style="font-family: Arial"><b>K2: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+            </div>
+            <div class="calculusData">
+                <p class="label" style="font-family: Arial"><b>Ant: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+                <p class="label" style="font-family: Arial"><b>Vexp: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+                <p class="label" style="font-family: Arial"><b>Va: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+                <p class="label" style="font-family: Arial"><b>Valor de reposición: </b>
+                    <span class="data" style="font-family: Arial">0.0 Bs.</span>
+                </p>
+            </div>
+            {{else}}
+                        <div class="calculusData">
+                <p class="label" style="font-family: Arial"><b>Vre: </b>
+                {{#if Vre}}
+                    <span class="data" style="font-family: Arial">{{Vre}} Bs</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0 Bs</span>
+                {{/if}}
+                </p>
+                <p class="label" style="font-family: Arial"><b>Vr: </b>
+                {{#if Vr}}
+                    <span class="data" style="font-family: Arial">{{Vr}} Bs.</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0 Bs</span>
+                {{/if}}
+                </p>
+                <p class="label" style="font-family: Arial"><b>K1a: </b>
+                {{#if K1a}}
+                    <span class="data" style="font-family: Arial">{{K1a}}</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0</span>
+                {{/if}}
+                </p>
+                <p class="label" style="font-family: Arial"><b>K2: </b>
+                {{#if K2}}
+                    <span class="data" style="font-family: Arial">{{K2}}</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0</span>
+                {{/if}}
+                </p>
+            </div>
+            <div class="calculusData">
+                <p class="label" style="font-family: Arial"><b>Ant: </b>
+                {{#if Ant}}
+                    <span class="data" style="font-family: Arial">{{Ant}}</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0</span>
+                {{/if}}
+                </p>
+                <p class="label" style="font-family: Arial"><b>Vexp: </b>
+                {{#if Vexp}}
+                    <span class="data" style="font-family: Arial">{{Vexp}}</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0</span>
+                {{/if}}
+                </p>
+                <p class="label" style="font-family: Arial"><b>Va: </b>
+                {{#if Va}}
+                    <span class="data" style="font-family: Arial">{{Va}} Bs.</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0 Bs.</span>
+                {{/if}}
+                </p>
+            </div>
+            {{/if}}
         </div>
     </div>
         <div class="rightcolumn">
@@ -99,7 +161,7 @@
 
         </div>
     </div>
-
+    <hr class="new6">
     <div class="footer">
     <h3>Conclusiones: </h3>
     </div>
@@ -112,19 +174,29 @@
 </html>
 
 <style>
+    div.calculusData {
+        float: left;
+        width: 50%;
+    }
     hr.new5 {
         border: 2px solid #0073CE;
         border-radius: 5px;
 
     }
+    hr.new6 {
+    border: 2px solid #0073CE;
+    border-radius: 5px;
+    width: 94%;
+
+    }
     p.label, h3.label, h4.label, h5.label {
         color: rgb(0, 0, 0);
-        font-size:small;
+        font-size:medium;
         
     }
     span.data {
         color: black;
-        font-size:small;
+        font-size:medium;
     }
     div.containerHeader {
         display: flex;
@@ -155,6 +227,9 @@
 .leftcolumn {   
   float: left;
   width: 60%;
+}
+.description {
+  line-height: 1.25;
 }
 .textHeader {
   font-size: small;

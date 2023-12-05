@@ -12,8 +12,9 @@ const createPDF = async ({ templateHTML }) => {
     await page.setContent(templateHTML)
     await page.emulateMediaType('screen')
     const pdf = await page.pdf({
-      format: 'A4',
+      format: 'Letter',
       printBackground: true,
+      timeout: 0,
       margin: {
         top: '0.5cm',
         bottom: '1.5cm'
