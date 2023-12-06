@@ -1,6 +1,6 @@
 const csv = require('csv-parser');
 const { Readable } = require('stream');
-const { addPrefixToImages } = require("../utils/addPrefixToImages");
+const { addPrefixToImages } = require("../utils/csvs/addPrefixToImages");
 
 const uploadCsvFileController = async (req, res) => {
   if (!req.file) {
