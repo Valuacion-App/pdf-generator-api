@@ -1,9 +1,8 @@
 const { Router } = require("express");
-const { upload } = require("../utils/upload");
+const { upload } = require("../utils/csvs/upload");
+const uploadCsvFileController = require("../controllers/uploadCsvFileController");
 const router = Router();
 
-router.post("/uploadFile", upload.any(), function (req, res) {
-  res.json({ message: "upload PDF File" });
-});
+router.post("/upload-file", upload.single("csvFile"), uploadCsvFileController )
 
 module.exports = router;
