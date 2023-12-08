@@ -1,3 +1,4 @@
+const { handleHttpError, handleHttpErrorCustome } = require('../utils/handlesMessage/handleHttpError')
 const createPDF = require('../utils/pdfs/generatePDF')
 const renderTemplate = require('../utils/pdfs/renderTemplate')
 
@@ -18,4 +19,27 @@ const generatePDFController = async (req, res) => {
   // res.send('Hola')
 }
 
-module.exports = generatePDFController
+const generateOnePDFController = async (req, res) => {
+  try {
+    const data = req.body
+
+    if (Object.keys(data).length === 0) {
+      return handleHttpErrorCustome({ res, message: 'Ingrese el dato de un registro', code: 404 })
+    }
+
+    const HTMLContent = renderTemplate('pdfTemplateOne', data)
+    const pdfBuffer = await createPDF({ templateHTML: HTMLContent })
+
+    res.setHeader('Content-Type', 'application/pdf')
+    // res.setHeader('Content-Disposition', 'attachment; filename=prueba1.pdf')
+    res.write(pdfBuffer)
+    res.end()
+  } catch (error) {
+    handleHttpError({ res, error: error.message })
+  }
+}
+
+module.exports = {
+  generateOnePDFController,
+  generatePDFController
+}
