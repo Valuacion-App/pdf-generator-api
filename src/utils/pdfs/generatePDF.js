@@ -8,7 +8,6 @@ const createPDF = async ({ templateHTML }) => {
 
   try {
     const page = await browser.newPage()
-    // await page.goto('https://www.google.com')
     await page.setContent(templateHTML)
     await page.emulateMediaType('screen')
     const pdf = await page.pdf({
