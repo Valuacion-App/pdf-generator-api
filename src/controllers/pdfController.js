@@ -16,7 +16,6 @@ const generatePDFController = async (req, res) => {
 
   // Finalizar la respuesta
   res.end()
-  // res.send('Hola')
 }
 
 const generateOnePDFController = async (req, res) => {
