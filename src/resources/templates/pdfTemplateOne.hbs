@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reporte Tasacion Lab</title>
+</head>
+<body>
+    <div class="cardHeader">
+        <h2 class="text-center">Ficha Técnica</h2>
+        <p class="textHeader"><b>Solicitante:</b> JUZGADO PUBLICO CIVIL - COMERCIAL NRO 1 COCHABAMBA</p>
+        <p class="textHeader"><b>Propietario:</b> LAB SA</p>
+        <p class="textHeader"><b> Ciudad: </b>COCHABAMBA</p>
+        <p class="textHeader"><b>Provincia:</b> CERCADO</p>
+        <p class="textHeader"><b>Dirección:</b> AV. KILLMAN NRO 1691 ZONA AEROPUERTO</p>
+        <p class="textHeader"><b>Documentación del bien:</b> NINGUNA - DETALLAR EN CASO DE EXISTIR</p>
+    </div>
+    <hr class="new5">
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+            <p class="label" style="font-family: Arial"><b>Código de Tasación: </b>
+                <span class="data" style="font-family: Arial"><i>{{CodigoTasacion}}</i></span>
+            </p>
+            <p class="label" style="font-family: Arial"> <b>Código: </b>
+                <span class="data" style="font-family: Arial"><i>{{Codigo}}</i></span>
+            </p>
+            <p class="label" style="font-family: Arial"><b>Fecha: </b>
+                <span class="data" style="font-family: Arial">{{Fecha}}</span>
+            </p> 
+            <p class="label" style="font-family: Arial"><b>Viñeta: </b>
+                <span class="data" style="font-family: Arial">{{Viñeta}}</span>
+            </p>
+            <p class="label" style="font-family: Arial"><b>Detalle: </b>
+                <span class="data" style="font-family: Arial">{{Detalle}}</span>
+            </p>
+            <p class="label" style="font-family: Arial"><b>Ubicación:</b>
+                <span class="data" style="font-family: Arial">{{Ubication}}</span>
+            </p>
+            <p class="label" style="font-family: Arial"><b>Artículo: </b>
+                <span class="data" style="font-family: Arial">{{Article }}</span>
+            </p>
+            <p class="label" style="font-family: Arial"><b>Estado del artículo: </b>
+                <span class="data" style="font-family: Arial">{{EstadoDelArticulo}}</span>
+            </p>
+            <p class="label" style="font-family: Arial"><b>Sub Grupo: </b>
+                <span class="data" style="font-family: Arial">{{SubGroup}}</span>
+            </p>
+            <p class="label" style="font-family: Arial"><b>Descripción: </b>
+                <span class="data description" style="font-family: Arial">{{Descripcion}}</span>
+            </p>
+            <hr class="new5">
+            <h3>Datos del cálculo</h3>
+            {{#if IsCPU}}
+            <div class="calculusData">
+                <p class="label" style="font-family: Arial"><b>Vre: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+                <p class="label" style="font-family: Arial"><b>Vr: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+                <p class="label" style="font-family: Arial"><b>K1a: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+                <p class="label" style="font-family: Arial"><b>K2: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+            </div>
+            <div class="calculusData">
+                <p class="label" style="font-family: Arial"><b>Ant: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+                <p class="label" style="font-family: Arial"><b>Vexp: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+                <p class="label" style="font-family: Arial"><b>Va: </b>
+                    <span class="data" style="font-family: Arial">No aplica</span>
+                </p>
+                <p class="label" style="font-family: Arial"><b>Valor de reposición: </b>
+                    <span class="data" style="font-family: Arial">0.0 Bs.</span>
+                </p>
+            </div>
+            {{else}}
+            <div class="calculusData">
+                <p class="label" style="font-family: Arial"><b>Vre: </b>
+                {{#if Vre}}
+                    <span class="data" style="font-family: Arial">{{Vre}} Bs</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0 Bs</span>
+                {{/if}}
+                </p>
+                <p class="label" style="font-family: Arial"><b>Vr: </b>
+                {{#if Vr}}
+                    <span class="data" style="font-family: Arial">{{Vr}} Bs.</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0 Bs</span>
+                {{/if}}
+                </p>
+                <p class="label" style="font-family: Arial"><b>K1a: </b>
+                {{#if K1a}}
+                    <span class="data" style="font-family: Arial">{{K1a}}</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0</span>
+                {{/if}}
+                </p>
+                <p class="label" style="font-family: Arial"><b>K2: </b>
+                {{#if K2}}
+                    <span class="data" style="font-family: Arial">{{K2}}</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0</span>
+                {{/if}}
+                </p>
+            </div>
+            <div class="calculusData">
+                <p class="label" style="font-family: Arial"><b>Ant: </b>
+                {{#if Ant}}
+                    <span class="data" style="font-family: Arial">{{Ant}}</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0</span>
+                {{/if}}
+                </p>
+                <p class="label" style="font-family: Arial"><b>Vexp: </b>
+                {{#if Vexp}}
+                    <span class="data" style="font-family: Arial">{{Vexp}}</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0</span>
+                {{/if}}
+                </p>
+                <p class="label" style="font-family: Arial"><b>Va: </b>
+                {{#if Va}}
+                    <span class="data" style="font-family: Arial">{{Va}} Bs.</span>
+                {{else}}
+                    <span class="data" style="font-family: Arial">0.0 Bs.</span>
+                {{/if}}
+                </p>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+        <div class="rightcolumn">
+            <h3>Memoria fotográfica</h3>
+            <img class="images" src={{Fotografia.url}} width="250" height="200">                
+            <img src={{FotografiaII.url}} width="250" height="200">
+
+        </div>
+    </div>
+    <hr class="new6">
+    <div class="SaltoDePagina"></div>
+
+</body>
+
+</html>
+
+<style>
+    div.calculusData {
+        float: left;
+        width: 50%;
+    }
+    hr.new5 {
+        border: 2px solid #0073CE;
+        border-radius: 5px;
+
+    }
+    hr.new6 {
+    border: 2px solid #0073CE;
+    border-radius: 5px;
+    width: 94%;
+
+    }
+    p.label, h3.label, h4.label, h5.label {
+        color: rgb(0, 0, 0);
+        font-size:medium;
+        
+    }
+    span.data {
+        color: black;
+        font-size:medium;
+    }
+    div.containerHeader {
+        display: flex;
+        flex-direction: column;
+    }
+    .images {
+        margin-bottom: 10%;
+    }
+    div.SaltoDePagina {
+        page-break-after: always;
+    }
+  body {
+  font-family: Arial;
+
+  {{!-- background: #f1f1f1; --}}
+}
+
+/* Header/Blog Title */
+.header {
+
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 60%;
+}
+.description {
+  line-height: 1.25;
+}
+.textHeader {
+  font-size: small;
+  width: 100%;
+  text-align: left;
+  line-height: 0.3;
+}
+/* Right column */
+.rightcolumn {
+  text-align: center;
+  float: left;
+  width: 40%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+}
+.cardHeader {
+   background-color: white;
+   padding: 1px 20px 1px 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.text-center {
+    text-align: center;
+}
+/* Footer */
+.footer {
+  margin: 10px 20px 10px 20px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  text-align: left;
+  border-radius: 5px;
+  border: 3px solid #0073CE;
+
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+</style>
