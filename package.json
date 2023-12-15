@@ -11,7 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@img/sharp-win32-x64": "^0.33.0",
     "cors": "2.8.5",
     "csv-parser": "^3.0.0",
     "dotenv": "16.3.1",
@@ -19,10 +18,10 @@
     "handlebars": "^4.7.8",
     "multer": "^1.4.5-lts.1",
     "puppeteer": "^21.5.2",
-    "request": "^2.88.2",
     "sharp": "^0.33.0"
   },
   "devDependencies": {
+    "@img/sharp-win32-x64": "^0.33.0",
     "nodemon": "^3.0.1",
     "standard": "^17.1.0"
   },
