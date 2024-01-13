@@ -1,10 +1,13 @@
 const sharp = require('sharp')
-
+const heicConvert = require('heic-convert')
 async function procesarImagen (url) {
   try {
     const response = await fetch(url)
     const arrayBuffer = await response.arrayBuffer()
-    const body = Buffer.from(arrayBuffer)
+    let body = Buffer.from(arrayBuffer)
+    if (url.includes('heic')) {
+      body = await heicConvert({ buffer: body, format: 'PNG' })
+    }
 
     const bufferImagen = await sharp(body).rotate().resize(300, 300).toBuffer()
     const b64encoded = Buffer.from(bufferImagen).toString('base64')

@@ -1,0 +1,123 @@
+### Recuperar todas las peliculas
+GET  http://localhost:3000/api/v1
+
+### Recuperar todas las tracks
+GET  http://localhost:3000/api/tracks
+
+### Crear un track
+POST  http://localhost:3000/api/v1/generate-pdf/three-pdf
+Content-Type: application/json
+
+[
+    {
+        "CodigoTasacion": "TB1-109",
+        "Codigo": "B1-0012",
+        "Viñeta": "217744",
+        "Fecha": "1/12/2023 09:19",
+        "Ubication": "TALLER TB1",
+        "Article": "EQUIPO DE COMPUTACIÓN",
+        "SubGroup": "MONITOR",
+        "Detalle": "Monitor",
+        "Descripcion": "Monitor marca Sabre, modelo 550S, codigo DP15L87L, color beige",
+        "Vre": "",
+        "Vr": "",
+        "Ant": "",
+        "Vexp": "",
+        "EstadoDelArticulo": "Regular 3.0; K2 = 0.4",
+        "K2": "",
+        "ValorDeReposicion": "",
+        "K1a": "",
+        "Va": "",
+        "Fotografia": {
+            "url": "https://adalo-uploads.imgix.net/14760aaeae9806b1f33cd898500fcae21d1c957154504e76d1608e3f21249bf7.jpg",
+            "size": 1660829,
+            "width": 4160,
+            "height": 1968,
+            "filename": "17014369568701869739018867646464.jpg"
+        },
+        "FotografiaII": {
+            "url": "https://adalo-uploads.imgix.net/cb3ee5f0dd5801024b3a8fe3e9f76feaec71da4847e8555ae791701cba2bfca6.jpg",
+            "size": 1601919,
+            "width": 4160,
+            "height": 1968,
+            "filename": "17014369823351754481933432608483.jpg"
+        },
+        "Created": "1/12/2023 09:23",
+        "Updated": "1/12/2023 09:23",
+        "IsCPU": true
+    },
+    {
+        "CodigoTasacion": "TB1-95",
+        "Codigo": "B1-25",
+        "Viñeta": "18015",
+        "Fecha": "1/12/2023 09:17",
+        "Ubication": "TALLER TB1",
+        "Article": "EQUIPO DE COMPUTACIÓN",
+        "SubGroup": "CPU",
+        "Detalle": "CPU",
+        "Descripcion": "CPU, de color crema, maraca DELL, serial 8G2FY.",
+        "Vre": "",
+        "Vr": "",
+        "Ant": "",
+        "Vexp": "",
+        "EstadoDelArticulo": "Regular 3.0; K2 = 0.4",
+        "K2": "",
+        "ValorDeReposicion": "",
+        "K1a": "",
+        "Va": "",
+        "Fotografia": {
+            "url": "https://adalo-uploads.imgix.net/32944e1d78d7d06ef38ea47c227920fc6806a83db5150bf386e2361dd8912212.jpg",
+            "size": 5593477,
+            "width": 4160,
+            "height": 3120,
+            "filename": "17014366744021552912931927560172.jpg"
+        },
+        "FotografiaII": {
+            "url": "https://adalo-uploads.imgix.net/619d1a4881ce0b2b9246ca430c8ee902fd1932dd21ded63aadc40acb8bce91d4.jpg",
+            "size": 5470740,
+            "width": 4160,
+            "height": 3120,
+            "filename": "17014367252469022870754301950025.jpg"
+        },
+        "Created": "1/12/2023 09:21",
+        "Updated": "1/12/2023 09:21",
+        "IsCPU": true
+    },
+    {
+        "CodigoTasacion": "TB1-108",
+        "Codigo": "B1-0009",
+        "Viñeta": "21742",
+        "Fecha": "1/12/2023 09:12",
+        "Ubication": "TALLER TB1",
+        "Article": "EQUIPO DE COMPUTACIÓN",
+        "SubGroup": "MONITOR",
+        "Detalle": "Monitor",
+        "Descripcion": "Monitor marca Sabre, modelo 550S, codigo DP15L87L, color beige",
+        "Vre": "",
+        "Vr": "",
+        "Ant": "",
+        "Vexp": "",
+        "EstadoDelArticulo": "Regular 3.0; K2 = 0.4",
+        "K2": "",
+        "ValorDeReposicion": "",
+        "K1a": "",
+        "Va": "",
+        "Fotografia": {
+            "url": "https://adalo-uploads.imgix.net/a386fbe549d5e229e05fafdc06359fcc034db8440d3283e1d63fe9603667ed0a.jpg",
+            "size": 1810838,
+            "width": 4160,
+            "height": 1968,
+            "filename": "17014366253352311574963524962326.jpg"
+        },
+        "FotografiaII": {
+            "url": "https://adalo-uploads.imgix.net/ffbee92c5fede78e9daf5456f9e097ec6a08f5fda9b07b7cba5fad4d15b96305.jpg",
+            "size": 1646113,
+            "width": 4160,
+            "height": 1968,
+            "filename": "17014366994522299677933429585559.jpg"
+        },
+        "Created": "1/12/2023 09:19",
+        "Updated": "1/12/2023 09:19",
+        "IsCPU": true
+    }
+]

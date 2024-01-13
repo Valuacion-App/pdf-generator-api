@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reporte Tasacion Lab</title>
+</head>
+<body>
+    <div class="cardHeader">
+        <h2 class="text-center">Ficha Técnica</h2>
+    </div>
+    <hr class="new5">
+    {{#each datas}}
+        {{#ifThird @index}}
+        <div class="row">
+            <div class="leftcolumn">
+                <div class="card">
+                    <p class="label" style="font-family: Arial"><b>Código de Tasación: </b>
+                        <span class="data" style="font-family: Arial"><i>{{CodigoTasacion}}</i></span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Viñeta: </b>
+                        <span class="data" style="font-family: Arial">{{Viñeta}}</span>
+                    </p> 
+                    <p class="label" style="font-family: Arial"><b>Detalle: </b>
+                        <span class="data" style="font-family: Arial">{{Detalle}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Ubicación:</b>
+                        <span class="data" style="font-family: Arial">{{Ubication}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Sub Grupo: </b>
+                        <span class="data" style="font-family: Arial">{{SubGroup}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Valor de tasación: </b>
+                    {{#if IsCPU}}
+                    <span class="data" style="font-family: Arial">No se aplica.</span>
+                    {{else}}
+                    <span class="data" style="font-family: Arial">00.00 Bs.</span>
+                    {{/if}}
+                    </p>
+                </div>
+            </div>
+            <div class="centercolumn">
+                <div class="card">
+                    <p class="label" style="font-family: Arial"><b>Código: </b>
+                        <span class="data" style="font-family: Arial"><i>{{Codigo}}</i></span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Fecha: </b>
+                        <span class="data" style="font-family: Arial">{{Fecha}}</span>
+                    </p> 
+                    <p class="label" style="font-family: Arial"><b>Estado del artículo: </b>
+                        <span class="data" style="font-family: Arial">{{EstadoDelArticulo}}</span>
+                    </p>
+
+                    <p class="label" style="font-family: Arial"><b>Articulo: </b>
+                        <span class="data" style="font-family: Arial">{{Article}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Valor de rescate: </b>
+                    {{#if IsCPU}}
+                    <span class="data" style="font-family: Arial">00.00 Bs.</span>
+                    {{else}}
+                    <span class="data" style="font-family: Arial">No se aplica.</span>
+                    {{/if}}
+                    </p>
+                </div>
+            </div>
+            <div class="Rightcolumn">
+                <h3>Memoria fotográfica</h3>
+                {{!-- <div class="containerImage">                
+                    <img class="images" src={{Fotografia.url}} width="150" height="100">           
+                    <img src={{FotografiaII.url}} width="150" height="100">
+                </div> --}}
+
+            </div>
+            <div class="descriptionColumn">            
+                <p class="label" style="font-family: Arial"><b>Descripción: </b>
+                    <span class="description" style="font-family: Arial">{{Descripcion}}</span>
+                </p>
+            </div>
+        </div>
+
+        <hr class="new6">
+        {{else}}
+        <div class="SaltoDePagina"></div>
+        <div class="cardHeader">
+            <h2 class="text-center">Ficha Técnica</h2>
+        </div>
+        <hr class="new5">
+        <div class="row">
+            <div class="leftcolumn">
+                <div class="card">
+                    <p class="label" style="font-family: Arial"><b>Código de Tasación: </b>
+                        <span class="data" style="font-family: Arial"><i>{{CodigoTasacion}}</i></span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Viñeta: </b>
+                        <span class="data" style="font-family: Arial">{{Viñeta}}</span>
+                    </p> 
+                    <p class="label" style="font-family: Arial"><b>Detalle: </b>
+                        <span class="data" style="font-family: Arial">{{Detalle}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Ubicación:</b>
+                        <span class="data" style="font-family: Arial">{{Ubication}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Sub Grupo: </b>
+                        <span class="data" style="font-family: Arial">{{SubGroup}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Valor de tasación: </b>
+                    {{#if IsCPU}}
+                    <span class="data" style="font-family: Arial">No se aplica.</span>
+                    {{else}}
+                    <span class="data" style="font-family: Arial">00.00 Bs.</span>
+                    {{/if}}
+                    </p>
+                </div>
+            </div>
+            <div class="centercolumn">
+                <div class="card">
+                    <p class="label" style="font-family: Arial"><b>Código: </b>
+                        <span class="data" style="font-family: Arial"><i>{{Codigo}}</i></span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Fecha: </b>
+                        <span class="data" style="font-family: Arial">{{Fecha}}</span>
+                    </p> 
+                    <p class="label" style="font-family: Arial"><b>Estado del artículo: </b>
+                        <span class="data" style="font-family: Arial">{{EstadoDelArticulo}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Artículo: </b>
+                        <span class="data" style="font-family: Arial">{{Article}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Valor de rescate: </b>
+                    {{#if IsCPU}}
+                    <span class="data" style="font-family: Arial">00.00 Bs.</span>
+                    {{else}}
+                    <span class="data" style="font-family: Arial">No se aplica.</span>
+                    {{/if}}
+                    </p>
+                </div>
+            </div>
+            <div class="Rightcolumn">
+                <h3>Memoria fotográfica</h3>
+                {{!-- <div class="containerImage">                
+                    <img class="images" src={{Fotografia.url}} width="150" height="100">           
+                    <img src={{FotografiaII.url}} width="150" height="100">
+                </div> --}}
+
+            </div>
+            <div class="descriptionColumn">            
+                <p class="label" style="font-family: Arial"><b>Descripción: </b>
+                    <span class="description" style="font-family: Arial">{{Descripcion}}</span>
+                </p>
+            </div>
+            <hr class="new6">
+        </div>
+        {{/ifThird}}
+    {{/each}}
+    <!--{{#each datas}}
+
+        <div class="row">
+            <div class="leftcolumn">
+                <div class="card">
+                    <p class="label" style="font-family: Arial"><b>Código de Tasación: </b>
+                        <span class="data" style="font-family: Arial"><i>{{@index}}</i></span>
+                    </p>
+                    <p class="label" style="font-family: Arial"> <b>Código: </b>
+                        <span class="data" style="font-family: Arial"><i>{{Codigo}}</i></span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Fecha: </b>
+                        <span class="data" style="font-family: Arial">{{Fecha}}</span>
+                    </p> 
+                    <p class="label" style="font-family: Arial"><b>Viñeta: </b>
+                        <span class="data" style="font-family: Arial">{{Viñeta}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Detalle: </b>
+                        <span class="data" style="font-family: Arial">{{Detalle}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Ubicación:</b>
+                        <span class="data" style="font-family: Arial">{{Ubication}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Artículo: </b>
+                        <span class="data" style="font-family: Arial">{{Article }}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Estado del artículo: </b>
+                        <span class="data" style="font-family: Arial">{{EstadoDelArticulo}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Sub Grupo: </b>
+                        <span class="data" style="font-family: Arial">{{SubGroup}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Descripción: </b>
+                        <span class="data description" style="font-family: Arial">{{Descripcion}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="Rightcolumn">
+                <h3>Memoria fotográfica</h3>
+                <img class="images" src={{Fotografia.url}} width="200" height="150">           
+                <img src={{FotografiaII.url}} width="200" height="150">
+            </div>
+        </div>
+        <hr class="new6">
+        {{else}}
+        <div class="row">
+            <div class="leftcolumn">
+                <div class="card">
+                    <p class="label" style="font-family: Arial"><b>Código de Tasación: </b>
+                        <span class="data" style="font-family: Arial"><i>{{@index}}</i></span>
+                    </p>
+                    <p class="label" style="font-family: Arial"> <b>Código: </b>
+                        <span class="data" style="font-family: Arial"><i>{{Codigo}}</i></span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Fecha: </b>
+                        <span class="data" style="font-family: Arial">{{Fecha}}</span>
+                    </p> 
+                    <p class="label" style="font-family: Arial"><b>Viñeta: </b>
+                        <span class="data" style="font-family: Arial">{{Viñeta}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Detalle: </b>
+                        <span class="data" style="font-family: Arial">{{Detalle}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Ubicación:</b>
+                        <span class="data" style="font-family: Arial">{{Ubication}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Artículo: </b>
+                        <span class="data" style="font-family: Arial">{{Article }}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Estado del artículo: </b>
+                        <span class="data" style="font-family: Arial">{{EstadoDelArticulo}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Sub Grupo: </b>
+                        <span class="data" style="font-family: Arial">{{SubGroup}}</span>
+                    </p>
+                    <p class="label" style="font-family: Arial"><b>Descripción: </b>
+                        <span class="data description" style="font-family: Arial">{{Descripcion}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="Rightcolumn">
+                <h3>Memoria fotográfica</h3>
+                <img class="images" src={{Fotografia.url}} width="200" height="150">           
+                <img src={{FotografiaII.url}} width="200" height="150">
+            </div>
+        </div>
+        <div class="SaltoDePagina"></div>
+ 
+    {{/each}}-->
+
+</body>
+
+</html>
+
+<style>
+    hr.new5 {
+        border: 1px solid #0073CE;
+        border-radius: 5px;
+        margin-bottom: 0;
+
+    }
+    hr.new6 {
+        border: 1px solid #0073CE;
+        border-radius: 5px;
+        width: 94%;
+    }
+    p.label, h3.label, h4.label, h5.label {
+        color: rgb(0, 0, 0);
+        font-size:small;
+        
+    }
+    span.data {
+        color: black;
+        font-size:small;
+    }
+    div.containerHeader {
+        display: flex;
+        flex-direction: column;
+    }
+    div.SaltoDePagina {
+        page-break-after: always;
+    }
+  body {
+  font-family: Arial;
+
+  {{!-- background: #f1f1f1; --}}
+}
+
+/* Header/Blog Title */
+.header {
+
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.containerImage{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.leftcolumn {   
+    float: left;
+    width: 30%;
+    height: 40px;
+}
+.centercolumn {   
+  float: left;
+  width: 30%;
+}
+.descriptionColumn {   
+
+    float: left;
+    padding-left: 3%;
+    width: 100%;
+
+}
+/*span.descriptText {
+    font-size: medium;
+}*/
+.description {
+    font-size: small;
+    line-height: 1.25;
+}
+.textHeader {
+  font-size: smaller;
+  width: 100%;
+  text-align: left;
+  line-height: 0.3;
+}
+/* Right column */
+.Rightcolumn {
+  text-align: center;
+  float: left;
+  width: 40%;
+
+  padding-right: 10px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   padding-bottom: 0px;
+}
+.cardHeader {
+    background-color: white;
+    padding: 1px 20px 1px 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    margin-top: 0;
+    margin-bottom: 0;
+    content: "";
+    display: table;
+    clear: both;
+}
+.text-center {
+    text-align: center;
+}
+/* Footer */
+.footer {
+  margin: 10px 20px 10px 20px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  text-align: left;
+  border-radius: 5px;
+  border: 3px solid #0073CE;
+
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+</style>
