@@ -47,7 +47,7 @@ const generateThreePDFController = async (req, res) => {
     }
     for (const data of tasationData) {
       reportes.datas.push(await cleanData({ dataTasacion: data }))
-      reportes.datas.push(data)
+      // reportes.datas.push(data)
     }
     const HTMLContent = renderTemplate('pdfTemplateThree', reportes)
     const pdfBuffer = await createPDF({ templateHTML: HTMLContent })
