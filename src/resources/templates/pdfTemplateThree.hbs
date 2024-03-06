@@ -32,10 +32,10 @@
                         <span class="data" style="font-family: Arial">{{subGroup.name}}</span>
                     </p>
                     <p class="label" style="font-family: Arial"><b>Valor de tasación: </b>
-                    {{#if IsCPU}}
+                    {{#if useFormule}}
                     <span class="data" style="font-family: Arial">No se aplica.</span>
                     {{else}}
-                    <span class="data" style="font-family: Arial">00.00 Bs.</span>
+                    <span class="data" style="font-family: Arial">{{replacementValue}}</span>
                     {{/if}}
                     </p>
                 </div>
@@ -49,14 +49,14 @@
                         <span class="data" style="font-family: Arial">{{date}}</span>
                     </p> 
                     <p class="label" style="font-family: Arial"><b>Estado del artículo: </b>
-                        <span class="data" style="font-family: Arial">{{state}}</span>
+                        <span class="data" style="font-family: Arial">{{state.name}}</span>
                     </p>
 
                     <p class="label" style="font-family: Arial"><b>Articulo: </b>
                         <span class="data" style="font-family: Arial">{{article.name}}</span>
                     </p>
                     <p class="label" style="font-family: Arial"><b>Valor de rescate: </b>
-                    {{#if IsCPU}}
+                    {{#if useFormule}}
                     <span class="data" style="font-family: Arial">00.00 Bs.</span>
                     {{else}}
                     <span class="data" style="font-family: Arial">No se aplica.</span>
@@ -105,7 +105,7 @@
                         <span class="data" style="font-family: Arial">{{subGroup.name}}</span>
                     </p>
                     <p class="label" style="font-family: Arial"><b>Valor de tasación: </b>
-                    {{#if IsCPU}}
+                    {{#if useFormule}}
                     <span class="data" style="font-family: Arial">No se aplica.</span>
                     {{else}}
                     <span class="data" style="font-family: Arial">00.00 Bs.</span>
@@ -122,13 +122,13 @@
                         <span class="data" style="font-family: Arial">{{date}}</span>
                     </p> 
                     <p class="label" style="font-family: Arial"><b>Estado del artículo: </b>
-                        <span class="data" style="font-family: Arial">{{state}}</span>
+                        <span class="data" style="font-family: Arial">{{state.name}}</span>
                     </p>
                     <p class="label" style="font-family: Arial"><b>Artículo: </b>
                         <span class="data" style="font-family: Arial">{{article.name}}</span>
                     </p>
                     <p class="label" style="font-family: Arial"><b>Valor de rescate: </b>
-                    {{#if IsCPU}}
+                    {{#if useFormule}}
                     <span class="data" style="font-family: Arial">00.00 Bs.</span>
                     {{else}}
                     <span class="data" style="font-family: Arial">No se aplica.</span>
@@ -309,6 +309,7 @@
 .descriptionColumn {   
 
     float: left;
+    padding-top: 2%;
     padding-left: 3%;
     width: 100%;
 
