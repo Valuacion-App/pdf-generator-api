@@ -4,6 +4,7 @@ async function procesarImagen (url) {
   try {
     const response = await fetch(url)
     const arrayBuffer = await response.arrayBuffer()
+
     let body = Buffer.from(arrayBuffer)
     if (url.includes('heic')) {
       body = await heicConvert({ buffer: body, format: 'PNG' })
