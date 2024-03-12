@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ficha Técnica LAB</title>
+</head>
+<body>
+    <div class="container-header">
+      <h2 class="title">FICHA TÉCNICA</h2>
+    </div>
+    <hr class="divider" />
+
+    {{#each datas}} {{#ifThird @index}}
+    <div class="container">
+      <div class="container-data">
+        <div class="container-section">
+          <p>
+            <strong>Código de Tasación:</strong>
+            <span>{{appraisalCode}}</span>
+          </p>
+          <p>
+            <strong>Viñeta:</strong>
+            <span>{{bullet}}</span>
+          </p>
+          <p>
+            <strong>Ubicación:</strong>
+            <span>{{ubication.name}}</span>
+          </p>
+          <p>
+            <strong>Artículo:</strong>
+            <span>{{article.name}}</span>
+          </p>
+          <p>
+            <strong>Sub Grupo:</strong>
+            <span>{{subGroup.name}}</span>
+          </p>
+        </div>
+        <div class="container-section">
+          <p>
+            <strong>Código:</strong>
+            <span>{{code}}</span>
+          </p>
+          <p>
+            <strong>Fecha:</strong>
+            <span>{{date}}</span>
+          </p>
+          <p>
+            <strong>Detalle:</strong>
+            <span>{{detail}}</span>
+          </p>
+          <p>
+            <strong>Estado del artículo:</strong>
+            <span>{{state.name}}</span>
+          </p>
+          <p>
+            <strong>Valor de tasación:</strong>
+            {{#if useFormule}}
+            <span>{{Va}} Bs.</span>
+            {{else}}
+            <span>No se aplica</span>
+            {{/if}}
+          </p>
+          <p>
+            <strong>Valor de rescate:</strong>
+            {{#if useFormule}}
+            <span>No se aplica</span>
+            {{else}}
+            <span>{{replacementValue}} Bs.</span>
+            {{/if}}
+          </p>
+        </div>
+
+        <div class="container-section-images">
+          <h3>Memoria fotográfica</h3>
+          <div class="gallery">
+            <img src="{{urlImage1}}" />
+            <img src="{{urlImage2}}" />
+          </div>
+        </div>
+      </div>
+      <div class="container-extra-data">
+        <p>
+          <strong>Descripción:</strong>
+          <span>{{description}}</span>
+        </p>
+      </div>
+    </div>
+    <hr class="divider" />
+
+    {{else}}
+    <div class="jumpPage"></div>
+    <div class="container-header">
+      <h2 class="title">FICHA TÉCNICA</h2>
+    </div>
+    <hr class="divider" />
+
+    <div class="container">
+      <div class="container-data">
+        <div class="container-section">
+          <p>
+            <strong>Código de Tasación:</strong>
+            <span>{{appraisalCode}}</span>
+          </p>
+          <p>
+            <strong>Viñeta:</strong>
+            <span>{{bullet}}</span>
+          </p>
+          <p>
+            <strong>Ubicación:</strong>
+            <span>{{ubication.name}}</span>
+          </p>
+          <p>
+            <strong>Artículo:</strong>
+            <span>{{article.name}}</span>
+          </p>
+          <p>
+            <strong>Sub Grupo:</strong>
+            <span>{{subGroup.name}}</span>
+          </p>
+        </div>
+        <div class="container-section">
+          <p>
+            <strong>Código:</strong>
+            <span>{{code}}</span>
+          </p>
+          <p>
+            <strong>Fecha:</strong>
+            <span>{{date}}</span>
+          </p>
+          <p>
+            <strong>Detalle:</strong>
+            <span>{{detail}}</span>
+          </p>
+          <p>
+            <strong>Estado del artículo:</strong>
+            <span>{{state.name}}</span>
+          </p>
+          <p>
+            <strong>Valor de tasación:</strong>
+            {{#if useFormule}}
+            <span>{{Va}} Bs.</span>
+            {{else}}
+            <span>No se aplica</span>
+            {{/if}}
+          </p>
+          <p>
+            <strong>Valor de rescate:</strong>
+            {{#if useFormule}}
+            <span>No se aplica</span>
+            {{else}}
+            <span>{{replacementValue}} Bs.</span>
+            {{/if}}
+          </p>
+        </div>
+
+        <div class="container-section-images">
+          <h3>Memoria fotográfica</h3>
+          <div class="gallery">
+            <img src="{{urlImage1}}" />
+            <img src="{{urlImage2}}" />
+          </div>
+        </div>
+      </div>
+      <div class="container-extra-data">
+        <p>
+          <strong>Descripción:</strong>
+          <span>{{description}}</span>
+        </p>
+      </div>
+    </div>
+    <hr class="divider" />
+
+    {{/ifThird}} {{/each}}
+  </body>
+</html>
+
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  padding-inline: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+p {
+  margin: 0px;
+  margin-block: 10px;
+}
+
+.container-header {
+  padding: 0px
+}
+
+.title {
+  text-align: center;
+  margin: 20px 0px;
+  font-size: large;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-block: 20px;
+}
+
+.divider {
+  margin: 0;
+  border: 2px solid #0a4a7f;
+  border-radius: 2px;
+}
+
+.container-data {
+  display: flex;
+  flex-direction: row;
+  padding-inline: 10px;
+}
+
+.container-section {
+  width: 30%;
+  padding-top: 10px;
+  padding-right: 5px;
+}
+
+.container-section-images {
+  width: 40%;
+  text-align: center;
+}
+
+.container-section-images h3 {
+  margin: 5px 0px 5px 0px;
+}
+
+.gallery {
+  display: flex;
+  gap: 5px;
+  padding-inline: 0px;
+  padding-top: 5px;
+}
+
+.gallery img {
+  width: 50%;
+  height: auto;
+  border-radius: 3px;
+}
+
+.container-extra-data {
+  padding: 5px 10px 5px 10px;
+  text-align: justify;
+}
+
+.jumpPage {
+  page-break-after: always;
+}
+</style>
