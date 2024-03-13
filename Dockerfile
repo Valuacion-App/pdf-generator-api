@@ -6,7 +6,7 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 WORKDIR /usr/src/app
 
 COPY package*.json ./
-RUN npm install --cpu=x64 --os=linux sharp
+RUN npm install --force @img/sharp-linux-x64
 RUN npm install
 COPY . .
 CMD ["node", "app.js"]
