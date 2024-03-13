@@ -1,32 +1,21 @@
 const { handleHttpError, handleHttpErrorCustome } = require('../utils/handlesMessage/handleHttpError')
 const createPDF = require('../utils/pdfs/generatePDF')
 const renderTemplate = require('../utils/pdfs/renderTemplate')
-const cleanData = require('../utils/pdfs/cleanData')
+const cleanData = require('../utils/cleanData/cleanData')
+
 const generatePDFController = async (req, res) => {
-  const reportes = { reports: [{ name: 'articulo1' }, { name: 'articulo2' }] }
-  const HTML = renderTemplate('template', reportes)
-  const pdfBuffer = await createPDF({ templateHTML: HTML })
-
-  // Configurar los encabezados de la respuesta
-  res.setHeader('Content-Type', 'application/pdf')
-  // res.setHeader('Content-Disposition', 'attachment; filename=prueba1.pdf')
-
-  // Transmitir los buffers como respuesta
-  res.write(pdfBuffer)
-
-  // Finalizar la respuesta
-  res.end()
-}
-
-const generateOnePDFController = async (req, res) => {
   try {
-    const data = req.body
+    const tasationData = req.body
+    const reportes = { datas: [] }
 
-    if (Object.keys(data).length === 0) {
-      return handleHttpErrorCustome({ res, message: 'Ingrese el dato de un registro', code: 404 })
+    if (Object.keys(tasationData).length === 0) {
+      return handleHttpErrorCustome({ res, message: 'Ingrese un conjundo de items de tasacion', code: 400 })
     }
-    const cleanTasacion = await cleanData({ dataTasacion: data })
-    const HTMLContent = renderTemplate('pdfTemplateOne', cleanTasacion)
+    for (const data of tasationData) {
+      reportes.datas.push(await cleanData({ dataTasacion: data }))
+    }
+
+    const HTMLContent = renderTemplate('pdfTemplate', reportes)
     const pdfBuffer = await createPDF({ templateHTML: HTMLContent })
     res.setHeader('Content-Type', 'application/pdf')
     // res.setHeader('Content-Disposition', 'attachment; filename=prueba1.pdf')
@@ -38,6 +27,5 @@ const generateOnePDFController = async (req, res) => {
 }
 
 module.exports = {
-  generateOnePDFController,
   generatePDFController
 }

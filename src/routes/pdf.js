@@ -1,8 +1,7 @@
 const { Router } = require('express')
-const { generateOnePDFController, generatePDFController } = require('../controllers/pdfController')
+const { generatePDFController } = require('../controllers/pdfController')
 const router = Router()
 
-router.get('/', generatePDFController)
-router.post('/one-pdf', generateOnePDFController)
+router.post('/', generatePDFController)
 
 module.exports = router
