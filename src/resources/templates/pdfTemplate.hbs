@@ -55,17 +55,9 @@
             <span>{{state.name}}</span>
           </p>
           <p>
-            <strong>Valor de tasación:</strong>
-            {{#if useFormule}}
-            <span>{{Va}} Bs.</span>
-            {{else}}
-            <span>No se aplica</span>
-            {{/if}}
-          </p>
-          <p>
             <strong>Valor de rescate:</strong>
             {{#if useFormule}}
-            <span>No se aplica</span>
+            <span>{{Va}}</span>
             {{else}}
             <span>{{replacementValue}} Bs.</span>
             {{/if}}
@@ -83,7 +75,7 @@
       <div class="container-extra-data">
         <p>
           <strong>Descripción:</strong>
-          <span>{{description}}</span>
+          <span><pre>{{description}}</pre></span>
         </p>
       </div>
     </div>
@@ -138,17 +130,9 @@
             <span>{{state.name}}</span>
           </p>
           <p>
-            <strong>Valor de tasación:</strong>
+            <strong>Precio final:</strong>
             {{#if useFormule}}
-            <span>{{Va}} Bs.</span>
-            {{else}}
-            <span>No se aplica</span>
-            {{/if}}
-          </p>
-          <p>
-            <strong>Valor de rescate:</strong>
-            {{#if useFormule}}
-            <span>No se aplica</span>
+            <span>{{Va}}</span>
             {{else}}
             <span>{{replacementValue}} Bs.</span>
             {{/if}}
@@ -166,7 +150,7 @@
       <div class="container-extra-data">
         <p>
           <strong>Descripción:</strong>
-          <span>{{description}}</span>
+          <span><pre>{{description}}</pre></span>
         </p>
       </div>
     </div>
