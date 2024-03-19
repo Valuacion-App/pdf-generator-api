@@ -12,6 +12,13 @@ const cleanData = async ({ dataTasacion }) => {
   dataTasacion.bullet = fillEmptyFields(dataTasacion.bullet)
   dataTasacion.code = fillEmptyFields(dataTasacion.code)
   dataTasacion.date = getShortDate(dataTasacion.date)
+
+  if (dataTasacion.useFormule) {
+    dataTasacion.Va = dataTasacion.Va.toFixed(2)
+  } else {
+    dataTasacion.replacementValue = dataTasacion.replacementValue.toFixed(2)
+  }
+
   return dataTasacion
 }
 
