@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ficha Técnica LAB</title>
+</head>
+<body>
+    <div class="container-header">
+      <h2 class="title">FICHA TÉCNICA</h2>
+    </div>
+    <hr class="divider" />
+
+    {{#each datas}} {{#ifSecond @index}}
+    <div class="container">
+      <div class="container-data">
+        <div class="container-data-text">
+          <div class="container-main-info">
+            <div class="container-section">
+              <p>
+                <strong>Código de Tasación:</strong>
+                <span>{{appraisalCode}}</span>
+              </p>
+              <p>
+                <strong>Viñeta:</strong>
+                <span>{{bullet}}</span>
+              </p>
+              <p>
+                <strong>Ubicación:</strong>
+                <span>{{ubication.name}}</span>
+              </p>
+              <p>
+                <strong>Artículo:</strong>
+                <span>{{article.name}}</span>
+              </p>
+              <p>
+                <strong>Sub Grupo:</strong>
+                <span>{{subGroup.name}}</span>
+              </p>
+            </div>
+            <div class="container-section">
+              <p>
+                <strong>Código:</strong>
+                <span>{{code}}</span>
+              </p>
+              <p>
+                <strong>Fecha:</strong>
+                <span>{{date}}</span>
+              </p>
+              <p>
+                <strong>Detalle:</strong>
+                <span>{{detail}}</span>
+              </p>
+              <p>
+                <strong>Estado del artículo:</strong>
+                <span>{{state.name}}</span>
+              </p>
+              <p>
+                <strong>Valor de tasación:</strong>
+                <span>No se aplica</span>
+              </p>
+              <p>
+                <strong>Valor de rescate:</strong>
+                <span>{{replacementValue}} Bs.</span>
+              </p>
+            </div>
+          </div>
+          <div class="container-extra-data">
+            <p>
+              <strong>Descripción:</strong>
+              <span>{{description}}</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="container-section-images">
+          <h3>Memoria fotográfica</h3>
+          <div class="gallery">
+            <img src="{{urlImage1}}" />
+            <img src="{{urlImage2}}" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="divider" />
+
+    {{else}}
+    <div class="jumpPage"></div>
+    <div class="container-header">
+      <h2 class="title">FICHA TÉCNICA</h2>
+    </div>
+    <hr class="divider" />
+
+        <div class="container">
+      <div class="container-data">
+        <div class="container-data-text">
+          <div class="container-main-info">
+            <div class="container-section">
+              <p>
+                <strong>Código de Tasación:</strong>
+                <span>{{appraisalCode}}</span>
+              </p>
+              <p>
+                <strong>Viñeta:</strong>
+                <span>{{bullet}}</span>
+              </p>
+              <p>
+                <strong>Ubicación:</strong>
+                <span>{{ubication.name}}</span>
+              </p>
+              <p>
+                <strong>Artículo:</strong>
+                <span>{{article.name}}</span>
+              </p>
+              <p>
+                <strong>Sub Grupo:</strong>
+                <span>{{subGroup.name}}</span>
+              </p>
+            </div>
+            <div class="container-section">
+              <p>
+                <strong>Código:</strong>
+                <span>{{code}}</span>
+              </p>
+              <p>
+                <strong>Fecha:</strong>
+                <span>{{date}}</span>
+              </p>
+              <p>
+                <strong>Detalle:</strong>
+                <span>{{detail}}</span>
+              </p>
+              <p>
+                <strong>Estado del artículo:</strong>
+                <span>{{state.name}}</span>
+              </p>
+              <p>
+                <strong>Valor de tasación:</strong>
+                <span>No se aplica</span>
+              </p>
+              <p>
+                <strong>Valor de rescate:</strong>
+                <span>{{replacementValue}} Bs.</span>
+              </p>
+            </div>
+          </div>
+          <div class="container-extra-data">
+            <p>
+              <strong>Descripción:</strong>
+              <span>{{description}}</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="container-section-images">
+          <h3>Memoria fotográfica</h3>
+          <div class="gallery">
+            <img src="{{urlImage1}}" />
+            <img src="{{urlImage2}}" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="divider" />
+
+    {{/ifSecond}} {{/each}}
+  </body>
+</html>
+
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  padding-left: 70px;
+  padding-right: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+p {
+  margin: 0px;
+  margin-block: 10px;
+}
+
+.container-header {
+  padding: 0px;
+  margin-top: 60px;
+}
+
+.title {
+  text-align: center;
+  margin: 20px 0px;
+  font-size: large;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-block: 20px;
+}
+
+.divider {
+  margin: 0;
+  border: 2px solid #0a4a7f;
+  border-radius: 1px;
+}
+
+.container-data {
+  display: flex;
+  flex-direction: row;
+  padding-inline: 10px;
+
+  height: 400px;
+  width: auto;
+}
+
+.container-main-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-section {
+  width: 50%;
+  padding-top: 10px;
+  padding-right: 5px;
+}
+
+.container-section-images {
+  width: 40%;
+  text-align: center;
+  align-items: center;
+}
+
+.container-section-images h3 {
+  margin: 5px 0px 5px 0px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-inline: 0px;
+  padding-top: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 60%;
+  height: auto;
+  border-radius: 3px;
+}
+
+.container-extra-data {
+  text-align: justify;
+}
+
+.container-data-text {
+  width: 60%;
+}
+
+.jumpPage {
+  page-break-after: always;
+}
+</style>
