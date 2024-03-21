@@ -6,7 +6,9 @@ const cleanData = require('../utils/cleanData/cleanData')
 const generatePDFController = async (req, res) => {
   try {
     const tasationData = req.body
+    const { isTwoData } = req.query
     const reportes = { datas: [] }
+    let templateHTMLname = 'pdfTemplate'
 
     if (Object.keys(tasationData).length === 0) {
       return handleHttpErrorCustome({ res, message: 'Ingrese un conjundo de items de tasacion', code: 400 })
@@ -15,7 +17,12 @@ const generatePDFController = async (req, res) => {
       reportes.datas.push(await cleanData({ dataTasacion: data }))
     }
 
-    const HTMLContent = renderTemplate('pdfTemplate', reportes)
+    if (isTwoData === 'true') {
+      templateHTMLname = 'pdfTemplateTelecom'
+    }
+
+    const booleanTemplate = isTwoData === 'true'
+    const HTMLContent = renderTemplate(templateHTMLname, reportes, booleanTemplate)
     const pdfBuffer = await createPDF({ templateHTML: HTMLContent })
     res.setHeader('Content-Type', 'application/pdf')
     // res.setHeader('Content-Disposition', 'attachment; filename=prueba1.pdf')
